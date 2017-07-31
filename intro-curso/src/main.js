@@ -3,7 +3,7 @@ import App from './App'
 
 Vue.config.productionTip = false
 
-// Ejemplo de filtro a nivel global
+// Ejemplo de filtro global
 Vue.filter('reverse', (value) => {
   return value.split('').reverse().join('')
 })
