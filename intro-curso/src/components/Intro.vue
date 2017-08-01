@@ -7,10 +7,16 @@
       <li v-for="user in users" v-bind:key="user.id">
         {{ user.id }} - {{ user.name | reverse }}
       </li>
-    </ul>
+    </ul> 
     <div v-else>
       No existen usuarios
     </div>
+
+    <hr>
+    
+    <input v-model="userInput" />
+    <p>{{ userInput }}</p>
+    <button @click="showUserInput">Ver user input desde el componente</button>
   </div>
 </template>
 
@@ -25,12 +31,16 @@ export default {
   data () {
     return {
       txt: 'Hola mundo desde Intro!',
-      users: []
+      users: [],
+      userInput: ''
     }
   },
   methods: {
     clickIntro (txt) {
       console.log(txt)
+    },
+    showUserInput () {
+      console.log(this.userInput)
     }
   }
   // , Ejemplo de filtro a nivel de componente
